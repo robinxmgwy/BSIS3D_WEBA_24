@@ -1,26 +1,29 @@
 <?php
 
-class database
+class Database
 {
-    private function connect()
+    public function connect()
     {
-        $string = "mysql;host=localhost;dbname=mvcbsis3d_db";
+        $string = "mysql:host=localhost;dbname=mvc_bsis3d";
         $con = new PDO($string, 'root', '');
         return $con;
     }
-    public function query($query, $date = [])
+    public function query($query, $data = [])
     {
-        $con = $this-.connect();
-        $stm = $con-.prepare($query);
+        $con = $this->connect();
+        $stm = $con->prepare($query);
 
         $check = $stm->execute($data);
-
+        
         if ($check)
-        $result = $stm->fetchALL(PDO::FETCH_OBJ);
+        {
+            $result = $stm->fetchALL(PDO: :FETCH_OBJ);
 
-        if (is_array($result) && count($resut) > 0){
-            return $result;
+            if (is_array($result) && count ($result) > 0)
+            {
+                return $result;
+            }
         }
+        return false;
     }
-    return false;
 }

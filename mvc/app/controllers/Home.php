@@ -2,9 +2,8 @@
 
 class Home
 {
-    public function index()
-    {
-        echo 'Home/index';
-    }
-
+   public function index()
+   {
+    echo 'Home/index';
+   } 
 }

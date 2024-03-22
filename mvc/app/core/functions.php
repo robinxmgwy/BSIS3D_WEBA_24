@@ -2,7 +2,7 @@
 
 function show($stuff)
 {
-    echo '<pres>';
+    echo '<pre>';
     print_r($stuff);
-    echo '</pre>';
+    echo '<\pre>';
 }
